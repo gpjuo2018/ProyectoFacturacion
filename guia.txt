@@ -1,0 +1,11 @@
+Paso	Tarea
+1	Analiza los requerimientos del PDF (ya lo hicimos)      : listo
+2	Diseña las clases y relaciones en papel o software      : listo
+3	Dibuja el diagrama de clases y de componentes           : listo
+4	Estructura el proyecto por carpetas                     : listo
+5	Implementa las clases una por una, con pruebas simples  : listo
+6	Conecta los módulos usando lógica CRUD                  : listo
+7	Agrega una interfaz básica para mostrar datos           : listo
+8	Haz las pruebas unitarias                               
+9	Usa debug para mostrar objetos compuestos y herencia    
+10	Sube todo a GitHub y prepara la entrega final
