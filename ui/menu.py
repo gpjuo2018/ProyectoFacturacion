@@ -46,7 +46,7 @@ def mostrar_menu():
             if cliente:
                 fecha = date.today()
                 factura = crear_factura(fecha)
-                cliente._agregar_factura(factura)
+                cliente.agregar_factura(factura)
                 print(f"Factura creada para el cliente {cliente._nombre} en la fecha {fecha}.")
             else:
                 print("Cliente no encontrado.")

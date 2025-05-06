@@ -12,7 +12,7 @@ def leer_clientes() -> list:
 
 def buscar_cliente(cedula: str) -> Cliente:
     for cliente in clientes:
-        if cliente.cedula == cedula:
+        if cliente._cedula == cedula:
             return cliente
     return None
 

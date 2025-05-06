@@ -2,13 +2,19 @@
 from modelo.factura import Factura
 
 class Cliente:
-    def __init__(self, nombre: str, cedula: str):
+    def __init__(self, nombre, cedula):
         self._nombre = nombre
         self._cedula = cedula
         self._facturas = []
 
-    def _agregar_factura(self, factura: Factura):
+    def agregar_factura(self, factura):
         self._facturas.append(factura)
 
-    def _calcular_total_compras(self):
-        return sum(factura.valor_total for factura in self.facturas)
+    def obtener_nombre(self):
+        return self._nombre
+
+    def obtener_cedula(self):
+        return self._cedula
+
+    def obtener_facturas(self):
+        return self._facturas
