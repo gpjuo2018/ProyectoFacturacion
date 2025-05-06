@@ -7,4 +7,4 @@ class Antibiotico:
         self._tipo_animal = tipo_animal
 
     def __str__(self):
-        return f"{self._nombre} - ${self._precio:.2f} | ICA: {self._registro_ICA} | Frecuencia: {self._frecuencia_aplicacion} días | Dosis: {self._dosis}kg | Animal: {self._tipo_animal}"
+        return f"{self._nombre} - ${self._precio:.2f} | Dosis: {self._dosis}kg | Animal: {self._tipo_animal}"

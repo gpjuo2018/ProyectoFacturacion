@@ -8,7 +8,7 @@ class Cliente:
         self._facturas = []
 
     def _agregar_factura(self, factura: Factura):
-        self.facturas.append(factura)
+        self._facturas.append(factura)
 
     def _calcular_total_compras(self):
         return sum(factura.valor_total for factura in self.facturas)
