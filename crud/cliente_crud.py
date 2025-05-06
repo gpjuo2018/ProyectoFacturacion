@@ -10,13 +10,11 @@ def crear_cliente(nombre: str, cedula: str) -> Cliente:
 def leer_clientes() -> list:
     return clientes
 
-def actualizar_cliente(cedula: str, nuevo_nombre: str = None) -> bool:
+def buscar_cliente(cedula: str) -> Cliente:
     for cliente in clientes:
         if cliente.cedula == cedula:
-            if nuevo_nombre:
-                cliente.nombre = nuevo_nombre
-            return True
-    return False
+            return cliente
+    return None
 
 def eliminar_cliente(cedula: str) -> bool:
     global clientes
