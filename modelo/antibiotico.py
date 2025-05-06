@@ -1,13 +1,10 @@
 # modelo/antibiotico.py
-from modelo.producto import Producto
-
-class Antibiotico(Producto):
+class Antibiotico:
     def __init__(self, nombre: str, precio: float, dosis: int, tipo_animal: str):
-        super().__init__(nombre, precio)
-        if not (400 <= dosis <= 600):
-            raise ValueError("La dosis debe estar entre 400 y 600 kg.")
-        self.dosis = dosis
-        self.tipo_animal = tipo_animal
+        self._nombre = nombre
+        self._precio = precio
+        self._dosis = dosis
+        self._tipo_animal = tipo_animal
 
     def __str__(self):
-        return f"{super().__str__()} | Dosis: {self.dosis}kg | Animal: {self.tipo_animal}"
+        return f"{self._nombre} - ${self._precio:.2f} | ICA: {self._registro_ICA} | Frecuencia: {self._frecuencia_aplicacion} días | Dosis: {self._dosis}kg | Animal: {self._tipo_animal}"

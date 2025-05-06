@@ -1,22 +1,31 @@
 # modelo/factura.py
 from datetime import date
-from modelo.producto import Producto
+from modelo.producto_control import ProductoControl
+from modelo.antibiotico import Antibiotico
 
 class Factura:
     def __init__(self, fecha: date):
-        self.fecha = fecha
-        self.productos = []
-        self.valor_total = 0.0
+        self._fecha = fecha
+        self._productos_control = []  # Lista para productos de control
+        self._antibioticos = []       # Lista para antibióticos
+        self._valor_total = 0.0
 
-    def agregar_producto(self, producto: Producto):
-        self.productos.append(producto)
-        self.valor_total += producto.precio
+    def _agregar_producto_control(self, producto: ProductoControl):
+        self._productos_control.append(producto)
+        self._valor_total += producto._precio
 
-    def mostrar_productos(self):
-        return [str(p) for p in self.productos]
+    def _agregar_antibiotico(self, antibiotico: Antibiotico):
+        self._antibioticos.append(antibiotico)
+        self._valor_total += antibiotico._precio
 
-    def calcular_total(self):
-        return sum(producto.precio for producto in self.productos)
+    def _mostrar_productos(self):
+        productos_control = [str(p) for p in self._productos_control]
+        antibioticos = [str(a) for a in self._antibioticos]
+        return productos_control + antibioticos
+
+    def _calcular_total(self):
+        return self._valor_total
 
     def __str__(self):
-        return f"Factura del {self.fecha} - Total: ${self.valor_total:.2f} - {len(self.productos)} productos"
+        total_productos = len(self._productos_control) + len(self._antibioticos)
+        return f"Factura del {self._fecha} - Total: ${self._valor_total:.2f} - {total_productos} productos"
